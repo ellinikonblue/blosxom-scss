@@ -1,0 +1,388 @@
+// BlueSlate Style.SCSS
+// Apr 23th, 2013 KAWANISHI Kazuhiro
+@charset "UTF-8";
+@import "../960grid";
+@import "../common";
+
+// Mixin 定義
+//----- border-radius
+@mixin border-radius( $radius: 1em ) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin border-bottom-right-radius( $radius: 1em ) {
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+@mixin border-top-left-radius( $radius: 1em ) {
+  -moz-border-radius-topleft: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+//----- box-shadow
+@mixin box-shadow( $offset-x, $offset-y, $blur, $color ) {
+  -moz-box-shadow: $offset-x, $offset-y, $blur, $color;
+  -webkit-box-shadow: $offset-x, $offset-y, $blur, $color;
+  box-shadow: $offset-x, $offset-y, $blur, $color;
+}
+
+/* 共通部分
+ */
+body {
+  color: $black;
+  background-color: $white;
+}
+
+b, th, dt, strong, em {
+  font-weight: bold;
+}
+
+dd { padding-left: 1em; }
+
+ul { margin-left: 1.5em; }
+ol { margin-left: 1.5em; }
+
+pre {
+  color: $gray;
+  background-color: $azure;
+  font-family: $monospace_Consolas;
+
+  @include box-shadow( 2px, 2px, 2px, $gray );
+  padding: ( $line_height / 2 ) 1em;
+  margin:  ( $line_height / 2 ) 1em;
+
+  overflow: auto;
+}
+
+blockquote {
+  color: $black;
+  background-color: $whitesmoke;
+
+  @include border-radius( .5em );
+  @include box-shadow( 2px, 2px, 2px, $black );
+  padding: ( $line_height / 2 ) 1em;
+  margin:  ( $line_height / 2 ) 1em;
+}
+
+div#wrapper {
+  width: $wrapper_width;
+
+  margin: 10px auto; /* 中央寄せ */
+  border-right: 3px solid $whitesmoke;
+  border-left:  3px solid $whitesmoke;
+}
+
+/* ヘッダー部分
+ */
+div#header {
+  $title_width: ( $grid_width + $gutter_width * 2 ) * 2;
+
+  font-family: $serif_Georgia;
+
+  .description {
+    color: $black;
+    background-color: $white;
+//  background-image: url( "/Common/image/WeblogTitle.png" );
+    @include fontsize-3;
+    text-align: right;
+
+    border-top: 1px solid $gray;
+    border-bottom: 5px solid $skyblue;
+    border-right: 1px solid $gray;
+
+    padding-top: $title_width - $line_height * 2 - 6;
+    padding-right: 1em;
+    margin-left: $title_width;
+  }
+  .sitenav {
+    color: $white;
+    background-color: $midnightblue;
+    @include fontsize-4;
+
+    margin-left: $title_width;
+  }
+
+  h1 {
+    color: $white;
+    background-color: $royalblue;
+    @include fontsize-2;
+    text-align: center;
+
+    width: $title_width;
+    padding-top:    $title_width / 2 - $line_height * 2;
+    padding-bottom: $title_width / 2 - $line_height * 2;
+
+    float: left;
+
+    a { // Title only
+      color: $white;
+      background-color: inherit;
+      text-decoration: none;
+      &:hover {
+        color: $white;
+        background-color: inherit;
+        text-shadow: 0px 0px 5px $orangered;
+      }
+    }
+  }
+  a {
+    color: $white;
+    background-color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: $orangered;
+      background-color: inherit;
+    }
+  }
+  li { display: inline; }
+}
+
+/* コンテンツ部分
+ */
+div#main {
+  a {
+   color: $midnightblue;
+   backgroud-color: inherit;
+   text-decoration: none;
+   &:hover {
+     background-color: $skyblue;
+   }
+   &:visited {
+     color: $royalblue;
+   }
+  }
+}
+
+div#content {
+  color: $black;
+  background-color: $midnightblue;
+  font-family: $sans_serif_Helvetica;
+  @include fontsize-4;
+
+  width: ( $grid_width + $gutter_width * 2 ) * 5 - $gutter_width;
+  float: left;
+
+  border-right: 3px solid $whitesmoke;
+}
+
+div.article { /* 記事部分 */
+  color: $black;
+  background-color: $white;
+
+  @include border-bottom-right-radius( $line_height );
+  margin-right: $gutter_width;
+  margin-bottom: $line_height;
+
+  .title {
+    color: $white;
+    background-color: $midnightblue;
+    font-family: $serif_Georgia;
+    @include fontsize-3;
+    font-weight: bold;
+
+    padding-left: .5em;
+  }
+  .meta {
+    color: $gray;
+    background-color: transparent;
+    font-family: $serif_Georgia;
+    @include fontsize-5;
+
+    padding-left: 1em;
+  }
+  .paragraph {
+    color: $black;
+    background-color: transparet;
+
+    padding: $line_height 1em;
+  }
+
+  ul, ol, dl {
+    margin-top: $line_height / 2;
+    margin-bottom: $line_height / 2;
+  }
+  li { list-style: inherit; }
+  ul, ul li { list-style: disc none outside; }
+  ol, ol li { list-style: decimal none outside; }
+  ul ul, ul ul li { list-style: circle none outside; }
+  ol ol, ol ol li { list-style: lower-alpha none outside; }
+}
+
+.snsbutton {
+  color: $black;
+  background-color: transparent;
+  text-align: right;
+
+  height: $line_height * 3;
+  padding-right: 1em;
+
+  li { display: inline; }
+}
+
+div.writeback { /* ライトバック部分 */
+  color: $black;
+  background-color: $white;
+
+  @include border-top-left-radius( $line_height );
+  padding-top: $line_height;
+  padding-bottom: $line_height;
+  margin-left: $gutter_width;
+
+  h3 {
+    color: $black;
+    background-color: inherit;
+    @include fontsize-3;
+    font-weight: bold;
+
+    border-bottom: 3px $midnightblue solid;
+    padding-left: $gutter_width;
+    margin-right: $gutter_width;
+    margin-bottom: $line_height - 3px;
+  }
+  form {
+    padding-left: 1em;
+    margin-bottom: $line_height;
+  }
+  .title {
+    color: $midnightblue;
+    background-color: inherit;
+    font-weight: bold;
+
+    padding: 0 .5em;
+    margin: 0px $gutter_width;
+  }
+  .excerpt, .comment {
+    color: $black;
+    background-color: $azure;
+
+    border-top: 1px $royalblue solid;
+    border-bottom: 1px $royalblue solid;
+
+    padding: 0 1em;
+    margin: 0px $gutter_width;
+  }
+  .url {
+    padding-left: 1em;
+    margin-bottom: $line_height;
+  }
+  .meta {
+    color: $gray;
+    background-color: $white;
+    @include fontsize-5;
+    text-align: right;
+
+    padding-right: $gutter_width * 2;
+    margin-bottom: $line_height - 2;
+  }
+  .message {
+    color: $red;
+    background-color: inherit;
+    font-weight: bold;
+    text-align: center;
+  }
+  .none {
+    color: $gray;
+    background-color: inherit;
+
+    margin-bottom: $line_height;
+  }
+}
+
+/* ナビゲーション部分
+ */
+div#nav {
+  color: $black;
+  background-color: inherit;
+  font-family: $sans_serif_Helvetica;
+  @include fontsize-4;
+
+  width: ( $grid_width + $gutter_width * 2 ) * 3;
+
+  padding-top: $line_height;
+  padding-bottom: $line_height;
+  margin-left: ( $grid_width + $gutter_width * 2 ) * 5;
+
+  .search     { margin-bottom: $line_height; }
+  .calendar   { margin-bottom: $line_height; }
+  .categories { margin-bottom: $line_height; }
+  .archives   { margin-bottom: $line_height; }
+  .recommand  { margin-bottom: $line_height; }
+  .syndicate  { margin-bottom: $line_height; }
+  .spec       { margin-bottom: $line_height; }
+  .poweredby  { margin-bottom: $line_height; }
+
+  h3 {
+    color: $midnightblue;
+    background-color: inherit;
+    font-family: $serif_Georgia;
+    @include fontsize-3;
+
+    padding-left: .5em;
+    border-top: 3px $midnightblue solid;
+    border-bottom: 1px $gray solid;
+    margin-bottom: $line_height - 4;
+  }
+}
+
+div#archiveslist {
+  height: $line_height * 12;
+  overflow: auto;
+}
+
+/* フッター部分
+ */
+div#footer {
+  color: $white;
+  background-color: $midnightblue;
+  font-family: $serif_Georgia;
+  @include fontsize-3;
+  text-align: center;
+
+  clear: both;
+
+  padding-bottom: $line_height;
+
+  .pagenav {
+    padding-right: 1em;
+    margin-bottom: $line_height;
+  }
+
+  a {
+    color: $white;
+    background-color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: $orangered;
+      background-color: inherit;
+    }
+  }
+  hr {
+    width: 90%;
+  }
+}
+
+/* その他（主に広告用） */
+.RectangleAd {
+  text-align: center;
+  margin: 0px auto 14px auto;
+}
+
+.banner {
+  text-align: center;
+  margin: ($line_height / 2) auto ($line_height / 2 + 12px) auto;
+}
+
+.right  { text-align: right; }
+.center { text-align: center; }
+.small  { @include fontsize-5; }
+
+/* プラグインのためのスタイル
+ * （ Liteback プラグイン除く）
+ */
+@import "./plugin";
+
+/* for Drk7.jp Amazon Search */
+@import "./drk7jp";

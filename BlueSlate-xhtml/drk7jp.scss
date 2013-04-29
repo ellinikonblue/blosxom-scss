@@ -1,0 +1,14 @@
+/* for drk7.jp Amazon Search */
+.drk7jpSimilarity { padding: 0 .5em; }
+.drk7jpSimilarityHeader, .drk7jpSimilarityFooter {
+  @include fontsize-5;
+  text-align: right;
+}
+.drk7jpSimilaritySiteTitles {
+  @include fontsize-4;
+}
+.drk7jpSimilaritySiteSummarys {
+  color: $gray;
+  background-color: inherit;
+  @include fontsize-5;
+}

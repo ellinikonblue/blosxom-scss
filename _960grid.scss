@@ -1,0 +1,17 @@
+// for 960px Grid Design
+// Apr 2nd, 2013 KAWANISHI Kazuhiro
+//
+// グリッドレイアウト用の定数
+$grid_width:  100px;
+$gutter_width: 10px;
+$wrapper_width: ( $grid_width + $gutter_width * 2 ) * 8;
+
+// 行レイアウト用の定数
+$line_height:  24px;
+//----- 行レイアウトのための Mix-in
+@mixin fontsize-1 { font-size: 32px; line-height: $line_height * 2; }
+@mixin fontsize-2 { font-size: 24px; line-height: $line_height * 2; }
+@mixin fontsize-3 { font-size: 18px; line-height: $line_height; }
+@mixin fontsize-4 { font-size: 14px; line-height: $line_height; }
+@mixin fontsize-5 { font-size: 12px; line-height: $line_height; }
+@mixin fontsize-6 { font-size: 10px; line-height: $line_height; }

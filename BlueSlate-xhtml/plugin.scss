@@ -1,0 +1,111 @@
+// plugin.scss
+// 各プラグインのためのスタイル定義
+// Apr 23th, 2013 KAWANISHI Kazuhiro
+//
+.asinSimple { // for bsnap_asin 
+    width: ( $grid_width + $gutter_width ) * 5 + $gutter_width;
+
+    margin: ( $line_height / 2 ) auto;
+
+    @include border-radius( .5em );
+    border: 1px solid $gray;
+    -moz-box-shadow: 2px 2px 2px $black;
+    -webkit-box-shadow: 2px 2px 2px $black;
+    box-shadow: 2px 2px 2px $black;
+
+  table { margin: ( $line_height / 2 ) $gutter_width; }
+  th {
+    width: ( $grid_width + $gutter_width ) * 2;
+    text-align: center;
+    vertical-align: middle;}
+  td {
+    text-align: left;
+    vertical-align: top; }
+}
+
+.snaplt, .snaphs { // for bsnap_lt/bsnap_hs
+  text-align: center;
+
+  img {
+    background-color: $white;
+
+    border:  1px $gray solid;
+    padding: 5px;
+    margin-top:    $line-height - 6px;
+    margin-bottom: $line_height - 6px;
+  }
+
+  a {
+    color: inherit;
+    background-color: $white;
+    &:hover {
+      background-color: $white !important;
+    }
+  }
+}
+
+/* paging プラグイン */
+.paging {
+  em {
+    color: $white;
+    background-color: inherit;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px $orangered;
+  }
+}
+
+/* calendar プラグイン */
+.month-calendar {
+  table {
+    width: 21em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  caption { text-align: center; }
+  th { 
+    text-align: center;
+    width: 3em;
+  }
+  a { font-weight: bold; }
+}
+
+.Sunday {
+  color: $red;
+  a {
+    color: $red !important;
+    background-color: inherit;
+    font-weight: bold; }
+}
+.Saturday {
+  color: $royalblue;
+  a {
+    color: $royalblue !important;
+    background-color: inherit;
+    font-weight: bold; }
+}
+
+.ListTitleYr {
+  color: $black;
+  background-color: $white;
+
+  @include border-bottom-right-radius( $line_height );
+  padding-bottom: $line_height;
+  margin-right: $gutter_width;
+
+  h3 {
+    color: $white;
+    background-color: $midnightblue;
+    font-family: $serif_Georgia;
+    @include fontsize-3;
+    font-weight: bold;
+
+    padding: .5em;
+    margin-bottom: $line-height;
+  }
+  dt {
+    border-bottom: 3px solid $midnightblue;
+    padding-left:  .5em;
+    margin-right:  $gutter_width;
+  }
+  dd {}
+}
