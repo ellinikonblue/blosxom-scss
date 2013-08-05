@@ -1,5 +1,5 @@
-// BlueSlate Style.SCSS
-// Apr 23th, 2013 KAWANISHI Kazuhiro
+// BlueSlate Style.SCSS for HTML5
+// May 2nd, 2013 KAWANISHI Kazuhiro
 @charset "UTF-8";
 @import "../960grid";
 @import "../common";
@@ -77,9 +77,9 @@ div#wrapper {
 
 /* ヘッダー部分
  */
-div#header {
-  $title_width: ( $grid_width + $gutter_width * 2 ) * 2;
+$title_width: ( $grid_width + $gutter_width * 2 ) * 2;
 
+header {
   font-family: $serif_Georgia;
 
   .description {
@@ -97,13 +97,6 @@ div#header {
     padding-right: 1em;
     margin-left: $title_width;
   }
-  .sitenav {
-    color: $white;
-    background-color: $midnightblue;
-    @include fontsize-4;
-
-    margin-left: $title_width;
-  }
 
   h1 {
     color: $white;
@@ -116,18 +109,28 @@ div#header {
     padding-bottom: $title_width / 2 - $line_height * 2;
 
     float: left;
+  }
 
-    a { // Title only
+  a { // Title only
+    color: $white;
+    background-color: inherit;
+    text-decoration: none;
+    &:hover {
       color: $white;
       background-color: inherit;
-      text-decoration: none;
-      &:hover {
-        color: $white;
-        background-color: inherit;
-        text-shadow: 0px 0px 5px $orangered;
-      }
+      text-shadow: 0px 0px 5px $orangered;
     }
   }
+}
+
+nav {
+  font-family: $serif_Georgia;
+  color: $white;
+  background-color: $midnightblue;
+  @include fontsize-4;
+
+  margin-left: $title_width;
+
   a {
     color: $white;
     background-color: inherit;
@@ -156,7 +159,7 @@ div#main {
   }
 }
 
-div#content {
+section#content {
   color: $black;
   background-color: $midnightblue;
   font-family: $sans_serif_Helvetica;
@@ -168,7 +171,7 @@ div#content {
   border-right: 3px solid $whitesmoke;
 }
 
-div.article { /* 記事部分 */
+article { /* 記事部分 */
   color: $black;
   background-color: $white;
 
@@ -204,6 +207,13 @@ div.article { /* 記事部分 */
     margin-top: $line_height / 2;
     margin-bottom: $line_height / 2;
   }
+  dt {
+    border-left:   .5em $royalblue solid;
+    border-bottom: 1px $whitesmoke solid;
+
+    padding-left: .5em;
+  }
+  dd { margin-bottom: $line_height; }
   li { list-style: inherit; }
   ul, ul li { list-style: disc none outside; }
   ol, ol li { list-style: decimal none outside; }
@@ -282,7 +292,7 @@ div.writeback { /* ライトバック部分 */
 
 /* ナビゲーション部分
  */
-div#nav {
+aside {
   color: $black;
   background-color: inherit;
   font-family: $sans_serif_Helvetica;
@@ -323,7 +333,7 @@ div#archiveslist {
 
 /* フッター部分
  */
-div#footer {
+footer {
   color: $white;
   background-color: $midnightblue;
   font-family: $serif_Georgia;
