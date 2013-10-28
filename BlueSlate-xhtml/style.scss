@@ -24,9 +24,9 @@
 
 //----- box-shadow
 @mixin box-shadow( $offset-x, $offset-y, $blur, $color ) {
-  -moz-box-shadow: $offset-x, $offset-y, $blur, $color;
-  -webkit-box-shadow: $offset-x, $offset-y, $blur, $color;
-  box-shadow: $offset-x, $offset-y, $blur, $color;
+  -moz-box-shadow: $offset-x $offset-y $blur $color;
+  -webkit-box-shadow: $offset-x $offset-y $blur, $color;
+  box-shadow: $offset-x $offset-y $blur $color;
 }
 
 /* 共通部分
