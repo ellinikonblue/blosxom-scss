@@ -9,6 +9,10 @@ BlueSlate-html5
 ----------
 　HTML 5 準拠フレーバー向けに書き直した BlueSlate SCSS
 
+Photologstrap
+----------
+　HTML 5 準拠で [Bootstrap](http://getbootstrap.com/) を組み込んだフレーバー「 Photlogstrap 」用の SCSS
+
 _common.scss
 ----------
 　共通定数などを定義する SCSS

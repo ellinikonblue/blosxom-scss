@@ -1,0 +1,13 @@
+// CSS Snippets
+// Aug 28th, 2013 KAWANISHI Kazuhiro
+//
+// 各種補正用
+//-----
+// for Rakuten Widget JS
+img[width="0"], img[height="0"] {
+        display: none;
+}
+
+img[src*="ad.yieldmanager.com"] {
+        display: none;
+}

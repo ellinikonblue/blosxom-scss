@@ -1,0 +1,17 @@
+// CSS Snippets
+// Sep 10th, 2013 KAWANISHI Kazuhiro
+//
+// blosxom のプラグイン用スタイルシート
+//-----
+.snapin, .snaplt {
+  text-align: center;
+  margin-top:    $line_height / 2;
+  margin-bottom: $line_height / 2;
+
+  img {
+    background-color: $white;
+
+    padding: 10px;
+    border: 1px solid $gray;
+  }
+}

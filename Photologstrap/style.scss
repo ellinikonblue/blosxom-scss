@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/* CSS for Photlog powerd by Bootstrap, "Photologstrap"
+ * Nov 16th, 2013 KAWANISHI Kazuhiro
+ */
+@import "../common"; // 共通定義ファイルの読み込み
+$line_height: 24px;  // 行幅定義
+
+/* 共通部分
+ */
+body {
+  color: inherit;
+  background-color: $orange;
+}
+
+#wrapper {
+  /* 全体の位置補正等ラッピング用 */
+  color: inherit;
+  background-color: $white;
+
+  .main {
+  }
+}
+
+// bootstrap(.min).css の補正
+.panel {
+  /* パネルの背景は白の透過に変更 */
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+/* ヘッダー部分
+ */
+header {
+  min-height: 120px;
+
+  h1 { // ブログタイトル部分
+    font-family: Cabin, $sans_serif_Tahoma;
+    text-shadow: 3px 3px 3px $silver;
+
+    position: relative;
+
+    padding: 20px;
+
+    &:before { // 左上のライン
+      content: " ";
+      position: absolute;
+
+      top:  0px;
+      left: 0px;
+      width:  30%;
+      height: 30%;
+
+      border-top:  3px solid $orange;
+      border-left: 3px solid $orange;
+    }
+    &:after { // 右下のライン
+      content: " ";
+      position: absolute;
+
+      top:  60%;
+      left: 60%;
+      width: 40%;
+      height:40%;
+
+      border-bottom: 3px solid $orange;
+      border-right:  3px solid $orange;
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+  .description {
+    text-align: right;
+
+    margin-bottom: $line_height;
+  }
+  .Ad {
+    margin-top: $line_height * 5;
+  }
+}
+
+/* 記事部分
+ */
+section {
+}
+
+article {
+  line-height: $line_height;
+
+  ul, ol, dl {
+    margin-top:    $line_height / 2;
+    margin-bottom: $line_height / 2;
+  }
+  dd {
+    margin-bottom: $line_height;
+  }
+  pre {
+    margin-top:    $line_height / 2;
+    margin-bottom: $line_height / 2;
+  }
+  blockquote {
+    margin-top:    $line_height / 2;
+    margin-bottom: $line_height / 2;
+  }
+
+  .article-title { // 記事タイトル部分
+    font-family: $serif_Georgia;
+  }
+  .paragraph { // 記事本文部分
+  }
+  .snsbutton { // 各種 SNS ボタン表示部分
+    text-align: right;
+
+    margin-top: $line_height;
+  }
+}
+
+/* ナビゲーション部分
+ */
+aside {
+  padding-bottom: $line_height * 3;
+
+  .categories {
+    line-height: $line_height;
+  }
+}
+
+/* ナビゲーションバー部分
+ */
+nav {
+  font-family: $serif_Georgia;
+}
+
+/* フッター部分
+ */
+footer {
+  color: $white;
+  background-color: $orangered;
+  font-family: $serif_Georgia;
+  text-align: center;
+
+  min-height: 120px;
+
+  padding-top: $line_height;
+  padding-bottom: $line_height * 3;
+}
+
+/* 広告スペース用
+ */
+.BannerAd {
+  text-align: center;
+  margin: 0px auto 12px auto;
+}
+
+.RectangleAd {
+  text-align: center;
+  margin: 0px auto 14px auto;
+}
+
+@import "./plugin";    // 各種プラグイン用定義ファイル
+@import "../snippets"; // 補正用定義ファイル
