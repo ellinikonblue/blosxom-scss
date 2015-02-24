@@ -9,7 +9,7 @@
 
     @include border-radius( .5em );
     border: 1px solid $gray;
-    @include box-shadow( 2px, 2px, 2px, $black; );
+    @include box-shadow( 2px, 2px, 2px, $black );
 
   table { margin: ( $line_height / 2 ) $gutter_width; }
   th {
